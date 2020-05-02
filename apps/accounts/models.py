@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 
 
 class Profile(models.Model):
-    of = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     
     name = models.CharField(default='', max_length=100)
     email = models.EmailField()
