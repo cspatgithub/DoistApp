@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('doist-admin-console/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('apps.tasks.urls')),
     path('', include('apps.notes.urls')),
     path('accounts/', include('apps.accounts.urls')),
