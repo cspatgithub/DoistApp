@@ -17,7 +17,7 @@ class Profile(models.Model):
     GENDER_OPTIONS = (("Male", "Male"), ("Female", "Female"), ("Other", "Other"))
     gender = models.CharField(choices=GENDER_OPTIONS, default="Male", max_length=10)
 
-    slug = models.SlugField(default='', unique=True)
+    slug = models.SlugField(default='')
 
     date = models.DateTimeField(auto_now_add=True)
 

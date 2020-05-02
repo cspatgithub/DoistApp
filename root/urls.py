@@ -8,4 +8,6 @@ urlpatterns = [
     path('', include('apps.tasks.urls')),
     path('', include('apps.notes.urls')),
     path('accounts/', include('apps.accounts.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+
