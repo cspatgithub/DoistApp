@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doist | Home
+{% endblock title %}
+
+{% block content %}
+<section class="today mb-3">
+    <div class="d-flex justify-content-between">
+        <h2>Today</h2>
+        <p><a href="{% url 'task-create' %}" class="text-dark"><i class="fas fa-plus mr-2 text-muted"></i> New Task
+                😋</a></p>
+    </div>
+
+    {% if today_tasks %}
+    <div class="today-task my-4">
+        {% for task in today_tasks  %}
+        <div class="row my-3 bg-light px-2 px-md-3 py-3 no-gutters">
+            <div class="col-md-6 mb-2">
+                <h5 class="m-0">
+                    <a href="{{task.get_absolute_url}}" class="text-dark">{{task.name}}</a>
+                </h5>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <small class="m-0">Time:<span class="text-muted ml-2">{{task.start_time}}</span></small>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                {% if task.status == 'Completed' %}
+                <small>Status<span class="ml-2 text-success">{{task.status}}<span></small>
+                {% else %}
+                <small>Status<span class="ml-2 text-danger">{{task.status}}<span></small>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% endblock content %}

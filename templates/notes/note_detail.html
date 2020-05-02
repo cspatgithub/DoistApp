@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doist | {{note.title}}
+{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-9">
+        <h2 class="mb-3">{{note.title}}</h2>
+        <small class="text-muted">{{note.created_at}}</small>
+
+        <div class="py-3 mb-4 ">
+            <a href="{% url 'note-update' note.slug %}" class="text-info mx-auto">
+                <small><i class="fa fa-edit mr-2"></i>Edit</small>
+            </a>
+
+            <a href="{% url 'note-delete' note.slug %}" class="text-danger ml-4">
+                <small><i class="fa fa-trash mr-2"></i>Delete</small>
+            </a>
+
+        </div>
+
+
+        <p class="note-text">{{note.text|safe}}</p>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doist | All Tasks
+{% endblock title %}
+
+{% block content %}
+<section class="today mb-3">
+    <h2>All Tasks</h2>
+
+
+    {% if tasks %}
+    <div class="today-task my-4">
+        {% for task in tasks  %}
+        <div class="row my-3  px-2 py-3 border-bottom no-gutters">
+            <div class="col-md-6 mb-2">
+                <h5 class="m-0">
+                    <a href="{{task.get_absolute_url}}" class="text-dark">{{task.name}}</a>
+                </h5>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 pt-1">
+                {% if task.status == 'Completed' %}
+                <small>Status<span class="ml-2 text-success">{{task.status}}<span></small>
+                {% else %}
+                <small>Status<span class="ml-2 text-danger">{{task.status}}<span></small>
+                {% endif %}
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="{% url 'task-delete' task.slug %}" class="text-danger btn m-0 p-0">
+                    <small class="m-0"><i class="fa fa-trash mr-2"></i>Delete</small>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% endblock content %}

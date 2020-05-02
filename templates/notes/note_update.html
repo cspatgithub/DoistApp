@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Doist | {{note.title}} - Update
+{% endblock title %}
+
+{% block content %}
+<h2>{{note.title}}</h2>
+
+<div class="row my-4">
+    <div class="col-lg-9">
+
+        <form method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{form.media}}
+            <div class="form-group">
+                {{form.title|as_crispy_field}}
+            </div>
+
+            <div class="form-row justify-content-center">
+                <div class="col-12">
+                    {{form.text|as_crispy_field}}
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block text-center font-weight-bold py-3 mt-3"><i
+                        class="fas fa-check-square mr-3"></i>Update</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

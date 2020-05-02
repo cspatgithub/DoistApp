@@ -1,0 +1,81 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/2c253b3061.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <title>Doist | You Signed Out</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top py-1">
+        <a class="navbar-brand mr-auto pl-md-4" href="{% url 'index' %}">Doist<i
+                class="fas fa-check-double ml-2"></i></a>
+    </nav>
+
+
+
+    <div class="row justify-content-center py-5 main">
+        <div class="col-md-8 col-lg-6 pt-5">
+            <center>
+                <h3 class="text-muted font-weight-light">You Signed Out</h3>
+            </center>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-10 col-md-8 col-lg-8">
+                    <p class="lead text-muted mx-md-4 mb-5"><span class="font-weight-bold">Doist</span> is a carefully
+                        crafted tool which helps you stay on top of your productivity game.</p>
+
+                    <button type="submit" class="btn btn-success btn-block text-center font-weight-bold py-3 mt-4">
+                        <a href="{% url 'signup' %}" class="text-white">Create Account</a>
+                    </button>
+
+                    <div class="border-bottom mt-4 mb-3"></div>
+
+                    <button type="submit" class="btn btn-primary btn-block text-center font-weight-bold py-3 mt-4">
+                        <a href="{% url 'login' %}" class="text-white">Sign In Again</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        feather.replace()
+    </script>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+</body>
+
+</html>

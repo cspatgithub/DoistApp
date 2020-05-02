@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Doist | {{user.username}}
+{% endblock title %}
+
+{% block content %}
+<div class="pl-2 pl-md-auto">
+    <div class="d-flex justify-content-between">
+        <h2>Your Profile</h2>
+        <p><a href="{% url 'profile-update' profile.slug %}" class="text-primary"><i
+                    class="fas fa-edit mr-2 text-primary"></i> Edit</a>
+        </p>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-lg-9 pt-4" style="font-size: 1.1rem;">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Name: <span class="ml-2 text-muted">{{profile.name}}</span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Email: <span class="ml-2 text-muted">{{profile.email}}</span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Phone: <span class="ml-2 text-muted">{{profile.phone_number}}</span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Location: <span class="ml-2 text-muted">{{profile.location}}</span></p>
+                </div>
+
+                <div class="col-md-6">
+                    <p>Gender: <span class="ml-2 text-muted">{{profile.gender}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

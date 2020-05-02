@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doist | All Notes
+{% endblock title %}
+
+{% block content %}
+<section class="today mb-3">
+    <div class="d-flex justify-content-between">
+        <h2>Your Notes</h2>
+        <p><a href="{% url 'note-create' %}" class="text-dark"><i class="far fa-sticky-note mr-2 text-primary"></i> New
+                Note</a>
+        </p>
+    </div>
+
+
+    {% if notes %}
+    <div class="today-task my-4">
+        {% for note in notes  %}
+        <div class="row px-2 mb-2 no-gutters">
+            <div class="col-md-11 col-lg-10 border-top border-bottom py-3">
+                <h4>
+                    <a href="{{note.get_absolute_url}}" class="text-dark">{{note.title}}</a>
+                </h4>
+                <p class="">{{note.text|safe|truncatechars:180}}</p>
+                <small class="m-0 text-muted">{{note.created_at}}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% endblock content %}

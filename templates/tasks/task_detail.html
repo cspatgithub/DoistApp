@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Doist | {{task.name}}
+{% endblock title %}
+
+{% block content %}
+<h2 class="mb-3">{{task.name}}</h2>
+
+<div class="mt-4 mb-2">
+    {% if task.status == 'Completed' %}
+    <a href="" class="text-success mr-4">
+        <small><i class="fas fa-check-square text-success mr-2"></i>{{task.status}}</small>
+    </a>
+    {% else %}
+    <a href="" class="text-muted mr-4">
+        <small><i class="fas fa-check-square mr-2"></i>{{task.status}}</small>
+    </a>
+    {% endif %}
+
+    <a href="{% url 'task-update' task.slug %}" class="text-info mx-auto">
+        <small><i class="fa fa-edit mr-2"></i>Edit</small>
+    </a>
+
+    <a href="{% url 'task-delete' task.slug %}" class="text-danger ml-4">
+        <small><i class="fa fa-trash mr-2"></i>Delete</small>
+    </a>
+
+</div>
+
+<div class="row py-3 border-bottom mb-4">
+    <div class="col-6 col-md-6 col-lg-4 mb-2">
+        <small>When: <span class="text-muted ml-2">{{task.start_date}}</span></small>
+    </div>
+    <div class="col-6 col-md-6 col-lg-5 mb-2">
+        <small>To: <span class="text-muted ml-2">{{task.end_date}}</span></small>
+    </div>
+    <div class="col-6 col-md-6 col-lg-4 mb-2">
+        <small>Begin: <span class="text-muted ml-2">{{task.start_time}}</span></small>
+    </div>
+    <div class="col-6 col-md-6 col-lg-5 mb-2">
+        <small>End: <span class="text-muted ml-2">{{task.end_time}}</span></small>
+    </div>
+</div>
+
+<h5 class="text-muted">Details :</h5>
+<p>{{task.details|safe}}</p>
+
+
+{% endblock content %}

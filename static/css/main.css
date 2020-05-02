@@ -1,0 +1,86 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: teal;
+}
+a {
+  text-decoration: none !important;
+}
+p {
+  line-height: 2;
+}
+
+.text-purple {
+  color: plum;
+}
+.asteriskField {
+  display: none;
+}
+
+.main {
+  min-height: 100vh;
+}
+.side-nav {
+  background-color: #fafafa;
+}
+.navbar {
+  background-color: teal;
+}
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+.navbar-nav {
+  width: 100%;
+  width: fit-content;
+  z-index: 2;
+}
+.sidebar-nav {
+  padding: 5rem 2rem 2rem 3rem;
+  width: fit-content;
+  list-style: none !important;
+  position: fixed;
+}
+.sidebar-nav li > a {
+  color: #040404;
+}
+.sidebar-nav li > a:hover {
+  color: teal;
+}
+.drop-menu li > a {
+  color: #fff;
+}
+
+@media only screen and(max-width: 770px) {
+  .sidebar-nav {
+    position: sticky !important;
+    width: 20rem !important;
+    background-color: white !important;
+    height: 100vh;
+  }
+  .side-nav {
+    display: none !important;
+  }
+  .navbar-nav {
+    background-color: white !important;
+  }
+  .display-menu {
+    z-index: 3;
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  .dipaly-menu {
+    display: none;
+  }
+}
